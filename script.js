@@ -4,22 +4,22 @@ var ties = 0;
 var losses = 0;
 
 // Game options entered by the user and computer.
-var gameOptions = ["R", "P", "S"];
+var options = ["R", "P", "S"];
 
 // Window opened for the user to select their choice in game options and end the function should they hit cancel.
-var game = function () {
-    var userChoice = window.prompt("Enter R, P or S:");
+var playGame = function () {
+    var userChoice = window.prompt("Enter R, P, or S:");
     if (!userChoice) {
         return;
     }
-}
+
 
 // This will automatically conver the user entered value to capital letters.
 userChoice = userChoice.toUpperCase();
 
 // This ensures the random number selected.
-var choice = Math.floor(Math.random() * gameOptions.length);
-var computerChoice = gameOptions[index];
+var index = Math.floor(Math.random() * options.length);
+var computerChoice = options[index];
 
 window.alert("The computer chose " + computerChoice);
 
@@ -40,10 +40,11 @@ if (userChoice === computerChoice) {
 
 window.alert("Stats:\nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties);
 
-var replay = window.confirm("Play again?");
+var playAgain = window.confirm("Play again?");
 
-if (replay) {
-    game();
+if (playAgain) {
+    playGame();
 }
+};
 
 playGame();
